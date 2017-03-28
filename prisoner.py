@@ -75,7 +75,7 @@ class Leader:
         self.visited = True
         if state & 1:
             self.counter += 1
-            return state ^ 1, self.counter == NUM_PRISONERS - 1
+            return state ^ 1, self.counter == (NUM_PRISONERS - 1) * 2
         else:
             return state ^ 2, False
 
@@ -83,14 +83,14 @@ class Leader:
 class Follower:
     def __init__(self):
         self.visited = False
-        self.done = False
+        self.done = 0
 
     def move(self, state):
         self.visited = True
-        if self.done or state & 1:
+        if self.done == 2 or state & 1:
             return state ^ 2
         else:
-            self.done = True
+            self.done += 1
             return state ^ 1
 
 sys.exit(main(sys.argv[1:]))
