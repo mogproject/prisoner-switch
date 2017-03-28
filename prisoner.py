@@ -11,6 +11,8 @@ TEST_CASES = [
   [y for x in range(1, 23) for y in [x, 0]],
   [0] + [y for x in range(1, 23) for y in [x, 0]],
   [0, 0, 0, 0, 0] + [y for x in range(1, 23) for y in [x, x, 0, 0]],
+  [y for x in range(1, 23) for y in [x, 0, x, 0]],
+  [0] + [y for x in range(1, 23) for y in [x, 0, x, 0]],
 ]
 
 

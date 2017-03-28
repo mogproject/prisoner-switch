@@ -12,6 +12,7 @@
 ### Example
 
 ```
+./prisoner.py
 There are 23 prisoners.
 Initial switch state: 00
    T: SW [P#] DONE
@@ -36,4 +37,15 @@ Initial switch state: 00
  819: 01 [ 0] ***********************
 #0 makes a call.
 SUCCESS!!!
+```
+
+### Test All
+
+```
+for i in 00 01 02 03; do for j in 0 1 2 3 4 5; do ./prisoner.py $i $j |tail -1; done; done
+SUCCESS!!!
+SUCCESS!!!
+SUCCESS!!!
+
+...
 ```
